@@ -18,7 +18,7 @@ import io.swagger.v3.oas.annotations.servers.Server;
         servers = {
                 @Server(
                 description = "Railway",
-                url = "http://smartlex-production.up.railway.app"
+                url = "https://smartlex-production.up.railway.app/"
                 ),
                 @Server(
                         description = "Local ENV",
