@@ -22,7 +22,7 @@ import io.swagger.v3.oas.annotations.servers.Server;
                 ),
                 @Server(
                         description = "Railway",
-                        url = "https://smartlex-production.up.railway.app/swagger-ui/index.html#/"
+                        url = "https://smartlex-production.up.railway.app"
                 )
         }
 )
