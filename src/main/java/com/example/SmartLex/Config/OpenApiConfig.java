@@ -19,6 +19,10 @@ import io.swagger.v3.oas.annotations.servers.Server;
                 @Server(
                         description = "Local ENV",
                         url = "http://localhost:8080"
+                ),
+                @Server(
+                        description = "Railway",
+                        url = "https://smartlex-production.up.railway.app/swagger-ui/index.html#/"
                 )
         }
 )
