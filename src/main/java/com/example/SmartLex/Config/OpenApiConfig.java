@@ -17,12 +17,12 @@ import io.swagger.v3.oas.annotations.servers.Server;
         ),
         servers = {
                 @Server(
-                        description = "Local ENV",
-                        url = "http://localhost:8080"
+                description = "Railway",
+                url = "http://smartlex-production.up.railway.app"
                 ),
                 @Server(
-                        description = "Railway",
-                        url = "https://smartlex-production.up.railway.app"
+                        description = "Local ENV",
+                        url = "http://localhost:8080"
                 )
         }
 )
