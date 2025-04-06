@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
         teamContainer.innerHTML = ""; // Очищаем контейнер перед добавлением новых данных
 
         data.forEach(employee => {
-            const photoUrl = `https://smart-lex-ce22f5342491.herokuapp.com/${employee.photo}`; // Добавляем полный путь к изображению
+            const photoUrl = `https://smart-lex-ce22f5342491.herokuapp.com${employee.photo}`; // Добавляем полный путь к изображению
 
             const memberHTML = `
                 <a href="employee-detail.html?id=${employee.teamId}" class="team-member">
