@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Наш Опыт</title>
+    <link rel="stylesheet" href="experience.css">
+    <link href="https://unpkg.com/boxicons/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/bluelogo.png" alt="Логотип">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="main.html#main" class="nav-link">Главная</a></li>
+                <li><a href="main.html#services_id" class="nav-link">Услуги</a></li>
+                <li><a href="experience.html" class="nav-link active">Опыт</a></li>
+                <li><a href="team.html" class="nav-link">Команда</a></li>
+                <li><a href="information.html" class="nav-link">Правовая информация</a></li>
+            </ul>
+        </nav>
+        <button id="open-modal" class="contact-btn">Связаться</button>
+    </header>
+
+    <section class="experience" id="experience">
+        <h2 class="team-title">Наш Опыт</h2>
+        <div id="experience-list" class="experience-container">
+            <!-- Сюда будут подгружаться карточки опыта -->
+        </div>
+    </section>
+
+       <!-- Модальное окно -->
+    <div id="contact-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2 class="modal-title">Оставьте свои данные</h2>
+            <form id="contact-form">
+                <input type="text" id="contact-name" placeholder="Имя Фамилия" required>
+                <input type="tel" id="contact-phone" placeholder="Номер телефона" required>
+                <select id="contact-service" required>
+                    <option value="" disabled selected>Выберите услугу</option>
+                </select>
+                <button type="submit" class="submit-btn">Отправить</button>
+            </form>
+            <button class="close-btn">&times;</button>
+        </div>
+    </div>
+    
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <a href="tel:+996555555555" class="phone">
+                    <i class='bx bx-phone' style='color:#ffffff'  ></i> +996 555 555 555
+                </a>
+                <p class="email">
+                    <i class='bx bx-envelope' style='color:#ffffff'  ></i>info@smartlex.kg
+                </p> 
+            </div>
+            <div class="footer-center">
+                <img src="images/bluelogoline.png" alt="Logo"> <!-- Логотип -->
+            </div>
+            <div class="footer-right">
+                <p class="address">
+                    <i class='bx bx-map' style='color:#ffffff'></i> ул. Амитьбто 1, Бишкек
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="experience.js"></script>
+    <script src="contact.js"></script>
+    
+</body>
+</html>

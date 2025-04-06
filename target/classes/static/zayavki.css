@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@400;600&display=swap');
+
+
+html{
+    scroll-behavior: smooth;
+}
+
+/* Основной стиль */
+body {
+    font-family: 'Cormorant Infant', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Header */
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #B58F5E; /* Синий фон */
+    padding: 5px;
+    color: white;
+    z-index: 1000; /* Чтобы был поверх других элементов */
+    padding-left: 90px;
+    padding-right: 90px;
+}
+
+.logo img {
+    height: 100px; /* Подгонка по высоте логотипа */
+}
+
+.admin-title {
+    font-size: 37px;
+    font-weight: bold;
+}
+
+.request-button a {
+    color: white;
+    text-decoration: none;
+    font-size: 28px;
+    background-color: #192941;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: 2px solid #192941;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.request-button a:hover{
+    background-color: #0d1623;
+    color: white;
+    border: 2px solid #192941;
+}
+
+#application-container {
+    background-color: #192941;
+    padding: 100px;
+    padding-top: 60px;
+    min-height: 500px;
+}
+
+.application-item {
+    background-color: #B58F5E;
+    padding: 10px;
+    padding-left: 120px;
+    /*margin-bottom: 20px;*/
+    border-radius: 10px;
+    display: grid;
+    align-items: center;  /* Выравнивание по центру */
+    gap: 130px;  /* Отступ между элементами */
+    margin-bottom: 20px;  /* Отступ между заявками */
+    flex-wrap: wrap; /* Добавим обертку для элементов, если они не помещаются */
+    order: 0; /* Заявка по умолчанию наверху */
+    grid-template-columns: 1fr 1fr 1fr 1fr;  /* Два столбца */
+
+}
+
+.client-name, .service-name, .client-phone {
+    font-size: 24px;
+    color: #fff;
+    margin: 10px 0;
+}
+
+.contacted-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.contacted-container p {
+    margin-right: 10px;
+    color: #fff;
+    font-size: 24px;
+}
+
+.contacted-checkbox {
+    width: 20px;
+    height: 20px;
+}
+
+.footer {
+    background-color: #B58F5E; /* Цвет фона футера */
+    padding: 0px; /* Отступы сверху и снизу */
+    display: flex;
+    justify-content: center; /* Центрируем содержимое футера */
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px; /* Можно ограничить максимальную ширину футера */
+}
+
+.footer-left, .footer-right {
+    flex: 1;
+    text-align: center; /* Центрируем текст внутри этих блоков */
+    color: white; /* Белый цвет текста */
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Отступ между элементами */
+    /*margin-top: 10px;*/
+}
+
+.phone, .email, .address {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center; /* Выравнивание иконки и текста */
+    font-size: 18px;
+}
+
+.phone i, .email i, .address i {
+    margin-right: 8px; /* Отступ между иконкой и текстом */
+    font-size: 24px; /* Размер иконки */
+    color: white; /* Белый цвет */
+    transition: color 0.3s ease; /* Плавное изменение цвета */
+}
+
+.footer-center {
+    flex: 2;
+    text-align: center;
+}
+
+.footer img {
+    width: 250px; /* Размер логотипа */
+    height: auto;
+}

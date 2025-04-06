@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@400;600&display=swap');
+
+
+body {
+    margin: 0;
+    padding: 0;
+    padding-top: 103px; 
+}
+
+html{
+    scroll-behavior: smooth;
+}
+header {
+    font-family: 'Inter', sans-serif; /* Применение шрифта Inter к хедеру */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #B58F5E;
+    padding: 0px 90px;
+    position: fixed; /* Фиксируем хедер */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Чтобы был поверх других элементов */
+}
+
+.logo img {
+    height: 100px; /* Подгонка по высоте логотипа */
+}
+
+nav {
+    flex-grow: 1;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav .nav-link {
+    text-decoration: none;
+    font-size: 24px;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Стиль для активной ссылки */
+nav .nav-link.active {
+    background-color: #192941;
+    color: white;
+}
+
+/* Стиль для ховера */
+nav .nav-link:hover {
+    background-color: #192941;
+    color: white;
+}
+
+.contact-btn {
+    font-size: 24px;
+    color: white;
+    background-color: transparent;
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: 2px solid white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-left: -120px; /* Создаем отступ от навигационного меню */
+    margin-right: 190px; /* Убираем отступ справа, чтобы кнопка не уходила за пределы */
+}
+
+/* Стиль при наведении */
+.contact-btn:hover {
+    background-color: #192941;
+    color: white;
+    border: 2px solid #192941;
+}
+
+.experience{
+    background-color: #192941;
+    padding: 30px 20px;
+    /*text-align: center;*/
+    font-family: 'Cormorant Infant', serif;
+    min-height: 500px;
+}
+
+.team-title {
+    color: white;
+    font-family: 'Cormorant Infant', serif;
+    font-size: 50px;
+    margin-bottom: 40px;
+    text-align: center; /*  */
+    /*margin-left: 5%; /* Смещаем его левее */
+}
+
+.experience-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 20px;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.experience-card {
+    background: none;
+    padding: 0 10px;
+    border-radius: 15px;
+    max-width: 100%;
+    /*box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);*/
+    cursor: pointer;
+    transition: background 0.3s ease;
+    word-wrap: break-word;
+}
+
+.experience-card h2:hover {
+    transform: translateY(-5px);
+}
+
+.experience-card h2 {
+    font-size: 30px;
+    color: #B58F5E;
+    margin-bottom: 10px;
+}
+
+.experience-card p {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    max-width: 100%;
+    display: none;
+    font-size: 20px;
+    color: white;
+    line-height: 1.6;
+}
+
+.experience-card.active p {
+    display: block; /* Показываем описание при активном состоянии */
+}
+
+/* 📱 Адаптивность */
+@media (max-width: 768px) {
+    .experience-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.footer {
+    background-color: #B58F5E; /* Цвет фона футера */
+    padding: 0px; /* Отступы сверху и снизу */
+    display: flex;
+    justify-content: center; /* Центрируем содержимое футера */
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px; /* Можно ограничить максимальную ширину футера */
+}
+
+.footer-left, .footer-right {
+    flex: 1;
+    text-align: center; /* Центрируем текст внутри этих блоков */
+    color: white; /* Белый цвет текста */
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Отступ между элементами */
+}
+
+.phone, .email, .address {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center; /* Выравнивание иконки и текста */
+    font-size: 18px;
+}
+
+.phone i, .email i, .address i {
+    margin-right: 8px; /* Отступ между иконкой и текстом */
+    font-size: 24px; /* Размер иконки */
+    color: white; /* Белый цвет */
+    transition: color 0.3s ease; /* Плавное изменение цвета */
+}
+
+
+.footer-center {
+    flex: 2;
+    text-align: center;
+}
+
+.footer img {
+    width: 250px; /* Размер логотипа */
+    height: auto;
+}
+
+/* Затемнение фона при открытии модалки */
+body.modal-open {
+    overflow: hidden;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s;
+    z-index: 9999; /* Устанавливаем высокий z-index, чтобы окно было поверх всех элементов */
+}
+
+.modal-content {
+    background: #B58F5E;
+    width: 500px;
+    height: 410px;
+    padding: 20px;
+    border-radius: 30px;
+    text-align: center;
+    position: relative;
+    font-family: 'Cormorant Infant', serif; /* Устанавливаем шрифт */
+}
+
+.modal-title {
+    font-size: 30px;
+    color: white;
+    margin-bottom: 40px;
+}
+
+input, select {
+    width: 90%;
+    color: #666666;
+    padding: 10px;
+    font-size: 20px;
+    margin-bottom: 30px;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Cormorant Infant', serif; /* Устанавливаем шрифт */
+}
+
+select{
+    width: 94%;
+}
+
+.submit-btn {
+    background: #192941;
+    color: white;
+    padding: 8px;
+    font-size: 22px;
+    border: none;
+    width: 50%;
+    cursor: pointer;
+    border-radius: 10px;
+    font-family: 'Cormorant Infant', serif; /* Устанавливаем шрифт */
+    margin-top: 20px;
+}
+
+.submit-btn:hover {
+    background: #0c131f;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
+/* Показываем модальное окно */
+.modal.show {
+    visibility: visible;
+    opacity: 1;
+}
