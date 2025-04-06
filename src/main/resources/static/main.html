@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartLex</title>
+    <link rel="stylesheet" href="main.css">
+    <link href="https://unpkg.com/boxicons/css/boxicons.min.css" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/bluelogo.png" alt="Логотип">
+        </div>
+
+        <!-- Бургер-меню -->
+        <div class="burger-menu">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="main.html#main" class="nav-link">Главная</a></li>
+                <li><a href="main.html#services_id" class="nav-link">Услуги</a></li>
+                <li><a href="experience.html" class="nav-link">Опыт</a></li>
+                <li><a href="team.html" class="nav-link">Команда</a></li>
+                <li><a href="information.html" class="nav-link">Правовая информация</a></li>
+            </ul>
+        </nav>
+        <button id="open-modal" class="contact-btn" data-id="123">Связаться</button>
+    </header>
+
+    <section class="problem-solutions" id="main">
+        <div class="text-content">
+            <h2>Ваши </h2>
+            <h2>проблемы,</h2>
+            <h2>наши решения</h2>
+        </div>
+        <div class="images">
+            <div class="clouds">
+                <img src="images/bluecloud.png" alt="Облако">
+            </div>
+            <div class="statue">
+                <img src="images/whitelogoo.svg" alt="SmartLex">
+            </div>
+        </div>
+    </section>
+    
+    <!--<section class="branding-section" id="branding">
+        <div class="white-section">
+            <img src="images/gold.svg" alt="Smart Lex Logo" class="logo">
+            <div class="text">
+                <p>Smart Lex</p>
+                <div class="advocacia">
+                    <span>ADVOCACIA</span>
+                </div>
+            </div>
+        </div>
+    
+        <div class="blue-container">
+            <div class="pattern">
+                <img src="images/Group 2.svg" alt="Pattern">
+            </div>
+        </div>
+    
+        <div class="circle-logo">
+            <img src="images/whitelogoo.svg" alt="Smart Lex Large Logo">
+        </div>
+    </section>-->
+
+    <div class="about-container" id="about">
+        <div class="logo-container">
+            <img src="images/bluelogolinelong.png" alt="Service Image" class="bluelogoimage">
+        </div>
+        <div class="about-text">
+            <div class="about-title">О Нас</div>
+        </div>
+        
+        <div class="about-content">
+            <img src="images/Статуя давида.png" alt="About Image" class="about-image">
+            <p class="about-description">Lorem ipsum dolor sit amefxgcjhbknlm,gchvjbhnkmkxdgcfhvjbknkmvbhnjmkxdfgchvjbnm.t consectetur adipisicing elit. Modi doloribus nihil, vel eveniet magni cupiditate perspiciatis sequi. Distinctio, in ex ad, ab blanditiis eos magni maiores reiciendis consequuntur, consequatur quas? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum quam hic deleniti sed accusantium tempora necessitatibus amet explicabo error, est neque sint nemo numquam ad, atque nisi architecto tempore natus?.</p>
+        </div>
+    </div>
+
+    <div class="services-container" id="services_id">
+        <img src="images/logoline.png" alt="Service Image" class="service-image">
+        <h2 class="services-title">Наши услуги</h2>
+        <div class="services-list">
+            <!-- Динамически добавляемые услуги -->
+            <div class="service-item">Адвокат по уголовным делам</div>
+            <div class="service-item">Адвокат по уголовным делам</div>
+            <div class="service-item">Адвокат по уголовным делам</div>
+            <div class="service-item">Адвокат по уголовным делам</div>
+            <div class="service-item">Адвокат по уголовным делам</div>
+            <div class="service-item">Адвокат по уголовным делам</div>
+            <!-- и так далее -->
+        </div>
+    </div>
+    
+
+    <div id="contact-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2 class="modal-title">Оставьте свои данные</h2>
+            <form id="contact-form">
+                <input type="text" id="contact-name" placeholder="Имя Фамилия" required>
+                <input type="tel" id="contact-phone" placeholder="Номер телефона" required>
+                <select id="contact-service" required>
+                    <option value="" disabled selected>Выберите услугу</option>
+                </select>
+                <button type="submit" class="submit-btn">Отправить</button>
+            </form>
+            <button class="close-btn">&times;</button>
+        </div>
+    </div>
+
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <a href="tel:+996555555555" class="phone">
+                    <i class='bx bx-phone' style='color:#ffffff'  ></i> +996 555 555 555
+                </a>
+                <p class="email">
+                    <i class='bx bx-envelope' style='color:#ffffff'  ></i>info@smartlex.kg
+                </p> 
+            </div>
+            <div class="footer-center">
+                <img src="images/bluelogoline.png" alt="Logo"> <!-- Логотип -->
+            </div>
+            <div class="footer-right">
+                <p class="address">
+                    <i class='bx bx-map' style='color:#ffffff'></i> ул. Асмприот 1, Бишкек
+                </p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="main.js"></script>
+    <script src="contact.js"></script>
+</body>
+</html>

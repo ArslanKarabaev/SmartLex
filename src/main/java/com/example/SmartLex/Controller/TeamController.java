@@ -21,7 +21,7 @@ public class TeamController {
     }
 
     @GetMapping(path = "/getAllTeam")
-    public ResponseEntity<List<Team>> getAllExp(){
+    public ResponseEntity<List<Team>> getAllTeam(){
         return ResponseEntity.ok(teamService.getAllTeam());
     }
 

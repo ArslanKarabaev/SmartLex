@@ -1,0 +1,657 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@400;600&display=swap');
+
+
+body {
+    margin: 0;
+    padding: 0;
+    padding-top: 103px; 
+}
+
+html{
+    scroll-behavior: smooth;
+}
+header {
+    font-family: 'Inter', sans-serif; /* Применение шрифта Inter к хедеру */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #B58F5E;
+    padding: 0px 90px;
+    position: fixed; /* Фиксируем хедер */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Чтобы был поверх других элементов */
+}
+
+.logo img {
+    height: 100px; /* Подгонка по высоте логотипа */
+}
+
+nav {
+    flex-grow: 0;
+    /*text-align: center;*/
+    display: flex;
+    justify-content: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    /*justify-content: center;*/
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav .nav-link {
+    text-decoration: none;
+    font-size: 24px;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Стиль для активной ссылки */
+nav .nav-link.active {
+    background-color: #192941;
+    color: white;
+}
+
+/* Стиль для ховера */
+nav .nav-link:hover {
+    background-color: #192941;
+    color: white;
+}
+.contact-btn {
+    font-size: 24px;
+    color: white;
+    background-color: transparent;
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: 2px solid white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-left: -120px; /* Создаем отступ от навигационного меню */
+    margin-right: 190px; /* Убираем отступ справа, чтобы кнопка не уходила за пределы */
+}
+
+/* Стиль при наведении */
+.contact-btn:hover {
+    background-color: #192941;
+    color: white;
+    border: 2px solid #192941;
+}
+
+/* 🌟 АДАПТИВНОСТЬ */
+
+/* Планшеты */
+@media (max-width: 1024px) {
+    header {
+        padding: 15px 50px;
+    }
+
+    .logo img {
+        height: 70px;
+    }
+
+    nav ul {
+        flex-direction: row;
+    }
+
+    nav .nav-link {
+        font-size: 18px;
+        padding: 6px 12px;
+    }
+
+    .contact-btn {
+        font-size: 18px;
+        padding: 6px 12px;
+    }
+}
+
+/* Мобильные устройства */
+@media (max-width: 768px) {
+    header {
+        padding: 15px 30px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .logo img {
+        height: 60px;
+    }
+
+    /* Скрываем меню на мобильных */
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: #B58F5E;
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    /* Отображаем меню при открытии */
+    nav ul.active {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .contact-btn {
+        font-size: 18px;
+        padding: 6px 10px;
+    }
+
+    /* Бургер-меню */
+    .burger-menu {
+        display: block;
+        cursor: pointer;
+    }
+
+    .burger-menu div {
+        width: 30px;
+        height: 3px;
+        background-color: white;
+        margin: 6px 0;
+        transition: all 0.3s ease;
+    }
+}
+
+/* Полностью скрываем бургер на больших экранах */
+@media (min-width: 769px) {
+    .burger-menu {
+        display: none;
+    }
+}
+
+/*контейнер*/
+.problem-solutions {
+    background-color: #192941; /* Фон контейнера */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    padding-left: 50px;
+    position: relative;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes floatCloud {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(20px); } /* Двигаем влево */
+    100% { transform: translateX(0); }
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.text-content {
+    color: white;
+    font-family: 'Cormorant Infant', serif;
+    font-size: 65px; /* Размер шрифта */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-left: 50px;
+    position: relative; /* Для позиционирования облака */
+    z-index: 2; /* Чтобы текст был поверх облака */
+}
+
+.text-content h2 {
+    margin: 10px 0;
+    white-space: nowrap; /* Запрещает перенос слов */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+/* Даем каждому слову задержку */
+.text-content h2:nth-child(1) { animation-delay: 0.2s; }
+.text-content h2:nth-child(2) { animation-delay: 0.4s; }
+.text-content h2:nth-child(3) { animation-delay: 0.6s; }
+
+/* Контейнер для облаков и статуи */
+.images{
+    position: relative;
+    display: flex;
+    align-items: center; /* Выравнивание по центру по вертикали */
+    justify-content: flex-end; /* Правое выравнивание */
+    background-color: #192941; /* Синий фон для области с облаками и статуей */
+    width: 100%; /* Растягиваем контейнер на весь экран */
+    height: 700px; /* Фиксированная высота контейнера */
+    overflow: hidden; /* Чтобы ничего не выходило за пределы контейнера */
+}
+
+/* Облако с абсолютным позиционированием */
+.clouds {
+    position: absolute;
+    width: 100vw; /* Облако занимает больше половины экрана */
+    max-width: 790px; 
+    transform: scaleX(1.8); /* Растягиваем по горизонтали */
+    /*transform-origin: left; /* Расширяем облако вправо */
+    animation: floatCloud 6s ease-in-out infinite alternate; /* Плавное движение */
+    z-index: 1; /* Облако за текстом */
+    
+}
+
+/* Статуя, расположенная поверх облака */
+.statue {
+    position: absolute;
+    top: 5%; /* Статуя чуть ниже облака */
+    right: 40%; /* Немного правее облака */
+    z-index: 1; /* Ставим статую поверх облака */
+    max-width: 40%; /* Ограничиваем размер статуи */
+    height: auto;
+    opacity: 0;
+    transform: scale(0.9);
+    animation: scaleIn 1s ease-out forwards 0.8s; /* Легкое увеличение с задержкой */
+}
+
+.clouds img {
+    width: 100%; /* Растягиваем по контейнеру */
+    object-fit: cover;
+}
+
+.statue img {
+    width: 700px; /* Размер статуи */
+}
+
+
+
+.branding-section {
+    position: relative;
+    width: 100%;
+}
+
+.white-section {
+    background-color: #F0EEEA;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    position: relative;
+}
+.white-section .logo {
+    position: absolute;
+    left: 65%;
+}
+.white-section .text {
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    padding-left: 70%;
+}
+.white-section p {
+    font-size: 26px;
+    margin: 0;
+    letter-spacing: 3px;
+    font-weight: 550;
+}
+.advocacia {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+    width: 100%;
+    position: relative;
+    
+}
+
+.advocacia::before,
+.advocacia::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 40%; /* Длина линий будет 40% от родительского контейнера */
+    height: 1px;
+    background-color: black;
+}
+
+.advocacia::before {
+    left: -50px; /* Линия слева */
+}
+
+.advocacia::after {
+    right: -50px; /* Линия справа */
+}
+
+.advocacia span {
+    padding: 0 10px; /* Отступ от линий для текста */
+}
+
+.blue-container {
+    background-color: #0e1f3d;
+    padding: 0; /* Убираем все отступы */
+    margin: 0; /* Убираем все отступы по краям */
+    display: flex;
+    width: 100%; /* Контейнер занимает всю ширину экрана */
+    background-image: url('images/Group\ 2.svg');
+    /*background-repeat: repeat-x; /* Повторить изображение по горизонтали */
+    /*background-size: 100px auto; /* Уменьшаем размер фона, чтобы расстояние между изображениями было меньше */
+}
+
+
+.circle-logo {
+    position: absolute;
+    left: 70px;
+    top: 25%;
+    transform: translateY(-50%);
+    width: 450px;
+    height: 450px;
+    background-color: #b38b5e;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.circle-logo img {
+    width: 90%;
+}
+
+.about-container {
+    background-color: #F0EEEA; /* Белый фон для контейнера */
+    padding-left: 0;
+    padding-right: 80px;
+    opacity: 0; /* Начальная непрозрачность для анимации */
+    transition: opacity 1s ease-in-out;
+}
+
+.logo-container {
+    display: flex; /* Включаем Flexbox для контейнера логотипа */
+    justify-content: center; /* Центрируем логотип по горизонтали */
+    width: 100%; /* Чтобы контейнер занимал всю ширину */
+    opacity: 0; /* Начальная непрозрачность */
+    transition: transform 1.5s ease-out, opacity 1.5s ease-out;
+}
+
+.bluelogoimage {
+    width: auto; /* Чтобы логотип не растягивался */
+    max-width: 100%; /* Ограничиваем максимальную ширину логотипа */
+    height: auto; /* Автоматическая высота для логотипа */
+    padding-left: 90px;
+}
+
+.about-text {
+    padding-left: 140px;
+    padding-top: 50px;
+    opacity: 0; /* Начальная непрозрачность */
+    transition: transform 1s ease-out, opacity 1s ease-out;
+}
+
+.about-text .about-title {
+    background-color: #192941; /* Цвет фона для заголовка */
+    color: white; /* Белый цвет текста */
+    font-family: 'Cormorant Infant', serif; /* Шрифт Cormorant Infant */
+    font-size: 44px; /* Размер шрифта */
+    padding: 5px 18px;
+    border-radius: 90px; /* Закругленные углы */
+    display: inline-block; /* Чтобы заголовок был маленьким и не растягивался по всему контейнеру */
+    margin-bottom: 30px; /* Отступ снизу */
+    
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    opacity: 0;
+    transition: transform 1s ease-out, opacity 1.5s ease-out;
+}
+
+.about-image {
+    width: 400px; /* Размер картинки, можно менять */
+    margin-right: 120px; /* Отступ справа от картинки */
+    opacity: 0; /* Начальная непрозрачность */
+    transition: transform 1s ease-out, opacity 1.5s ease-out;
+}
+
+.about-description {
+    font-family: 'Cormorant Infant', serif;
+    font-weight: lighter; /* Используем легкую версию шрифта */
+    font-size: 30px; /* Размер шрифта */
+    color: #333; /* Цвет текста */
+    line-height: 1.5; /* Высота строки для улучшения читаемости */
+    opacity: 0; /* Начальная непрозрачность */
+    transition: transform 1s ease-out, opacity 1.5s ease-out;
+}
+
+/* Классы для анимаций при скроллинге */
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.visible-logo {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.visible-image {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.visible-description {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.visible-content {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.services-container {
+    background-color: #192941; /* Цвет фона контейнера */
+    padding: 20px 0px;
+    text-align: center; /* Центрируем все элементы */
+}
+
+.service-image {
+    width: 90%; /* Размер картинки, можно менять */
+    /*margin-bottom: 0px; /* Отступ снизу */
+}
+
+.services-title {
+    font-family: 'Cormorant Infant', serif;
+    color: white;
+    font-size: 55px;
+    margin-bottom: 40px; /* Отступ снизу */
+}
+
+.services-list {
+    display: flex;
+    flex-wrap: wrap; /* Чтобы услуги располагались по строкам */
+    justify-content: center; /* Центрируем услуги */
+    justify-content: space-between; /* Равномерное распределение элементов */
+    gap: 20px; /* Расстояние между блоками */
+    width: 90%;
+    padding-left: 70px;
+}
+
+.service-item {
+    color: white;
+    font-family: 'Cormorant Infant', serif;
+    font-size: 28px;
+    margin: 20px;
+    padding: 20px;
+    width: 20%; /* Ширина каждой услуги */
+    text-align: center;
+    transition: background-color 0.3s ease, opacity 0.3s ease; /* Плавный переход */
+    margin-bottom: 20px; /* Отступ снизу между строками */
+}
+
+.service-item:hover {
+    background-color: #B58F5E; /* Цвет при ховере */
+    opacity: 0.7; /* Прозрачность при ховере */
+    color: white;
+}
+
+.footer {
+    background-color: #B58F5E; /* Цвет фона футера */
+    padding: 0px; /* Отступы сверху и снизу */
+    display: flex;
+    justify-content: center; /* Центрируем содержимое футера */
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px; /* Можно ограничить максимальную ширину футера */
+}
+
+.footer-left, .footer-right {
+    flex: 1;
+    text-align: center; /* Центрируем текст внутри этих блоков */
+    color: white; /* Белый цвет текста */
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Отступ между элементами */
+    /*margin-top: 10px;*/
+}
+
+.phone, .email, .address {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center; /* Выравнивание иконки и текста */
+    font-size: 18px;
+}
+
+.phone i, .email i, .address i {
+    margin-right: 8px; /* Отступ между иконкой и текстом */
+    font-size: 24px; /* Размер иконки */
+    color: white; /* Белый цвет */
+    transition: color 0.3s ease; /* Плавное изменение цвета */
+}
+
+.footer-center {
+    flex: 2;
+    text-align: center;
+}
+
+.footer img {
+    width: 250px; /* Размер логотипа */
+    height: auto;
+}
+
+
+/* Затемнение фона при открытии модалки */
+body.modal-open {
+    overflow: hidden;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s;
+    z-index: 9999; /* Устанавливаем высокий z-index, чтобы окно было поверх всех элементов */
+}
+
+.modal-content {
+    background: #B58F5E;
+    width: 500px;
+    height: 410px;
+    padding: 20px;
+    border-radius: 30px;
+    text-align: center;
+    position: relative;
+    font-family: 'Cormorant Infant', serif; /* Устанавливаем шрифт */
+}
+
+.modal-title {
+    font-size: 30px;
+    color: white;
+    margin-bottom: 40px;
+}
+
+input, select {
+    width: 90%;
+    color: #666666;
+    padding: 10px;
+    font-size: 20px;
+    margin-bottom: 30px;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Cormorant Infant', serif; /* Устанавливаем шрифт */
+}
+
+select{
+    width: 94%;
+}
+
+.submit-btn {
+    background: #192941;
+    color: white;
+    padding: 8px;
+    font-size: 22px;
+    border: none;
+    width: 50%;
+    cursor: pointer;
+    border-radius: 10px;
+    font-family: 'Cormorant Infant', serif; /* Устанавливаем шрифт */
+    margin-top: 20px;
+}
+
+.submit-btn:hover {
+    background: #0c131f;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
+/* Показываем модальное окно */
+.modal.show {
+    visibility: visible;
+    opacity: 1;
+}

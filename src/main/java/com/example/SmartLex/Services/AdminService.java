@@ -1,5 +1,6 @@
 package com.example.SmartLex.Services;
 
+import com.example.SmartLex.Controller.UpdateContactedStatusReq;
 import com.example.SmartLex.Entity.*;
 import com.example.SmartLex.Repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class AdminService {
@@ -82,4 +84,13 @@ public class AdminService {
         teamRepo.deleteById(teamId);
     }
 
+    public void updateContactedStatus(UpdateContactedStatusReq req) {
+        Optional<Contact> contact = contactRepo.findContactById(req.getId());
+        if (contact.isPresent()) {
+            contact.get().setContacted(req.getContacted());
+            contactRepo.save(contact.get());
+        } else {
+            throw new IllegalStateException("Contact not found");
+}
+    }
 }

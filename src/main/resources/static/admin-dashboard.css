@@ -1,0 +1,322 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@400;600&display=swap');
+
+
+html{
+    scroll-behavior: smooth;
+}
+
+/* Основной стиль */
+body {
+    font-family: 'Cormorant Infant', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Header */
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #B58F5E; /* Синий фон */
+    padding: 5px;
+    color: white;
+    z-index: 1000; /* Чтобы был поверх других элементов */
+    padding-left: 90px;
+    padding-right: 90px;
+}
+
+.logo img {
+    height: 100px; /* Подгонка по высоте логотипа */
+}
+
+.admin-title {
+    font-size: 37px;
+    font-weight: bold;
+}
+
+.request-button a {
+    color: white;
+    text-decoration: none;
+    font-size: 28px;
+    background-color: #192941;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: 2px solid #192941;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.request-button a:hover{
+    background-color: #0d1623;
+    color: white;
+    border: 2px solid #192941;
+}
+
+/* Main container */
+.admin-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Изменено для выравнивания по левому краю */
+    gap: 20px; /* Добавлено расстояние между кнопками */
+    padding: 50px;
+    background-color: #192941;
+    
+}
+
+.admin-buttons {
+    display: flex;
+    flex-direction: row; /* Кнопки в одну строку */
+    justify-content: space-between;
+    width: calc(70% - 10px); /* Устанавливаем ширину на половину с отступом */
+    margin-bottom: 40px;
+}
+
+button {
+    background-color: #B58F5E;
+    color: white;
+    padding: 20px 20px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 30px;
+    font-family: 'Cormorant Infant', serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+    background-color: #90724b;
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Позиционирование окна поверх других элементов */
+}
+
+.modal-content {
+    background-color: #B58F5E; /* Цвет фона модального окна */
+    padding: 20px;
+    border-radius: 30px;
+    width: 500px;
+    text-align: center;
+    position: relative;
+    max-height: 90vh; /* Максимальная высота окна (80% от высоты экрана) */
+    overflow-y: auto; /* Добавляем вертикальную прокрутку */
+}
+
+.modal-title {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+input, textarea {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+    font-family: 'Cormorant Infant', serif;
+}
+
+textarea {
+    height: 100px;
+}
+
+.submit-btn {
+    background-color: #192941;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    width: 50%;
+    margin-top: 20px;
+}
+
+.submit-btn:hover {
+    background-color: #0d1623;
+}
+
+/* Photo and Info Container */
+.team-member-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.photo-container {
+    width: 40%;
+    height: 220px; /* Высота примерно как у ФИО + Описания */
+    background-color: #fff;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+}
+
+.photo-label {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #192941;
+    font-size: 16px;
+    text-align: center;
+    
+}
+
+#photo-text{
+    margin-top: 85px;
+    text-decoration: none;
+    border-bottom: none; /* Убираем возможную границу */
+}
+
+.photo-label img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.photo-container:hover {
+    border-color: #0d1623;
+}
+
+.info-container {
+    width: 55%;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Крестик для закрытия модального окна */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    background: none;
+    border: none;
+    z-index: 1010; /* Обеспечивает видимость крестика */
+}
+
+.close-btn:hover {
+    color: #192941;
+}
+
+/* Список услуг */
+#service-list-container, #experience-list-container, #legal-info-list-container, #team-member-list-container {
+    margin-bottom: 20px;
+}
+
+/* Контейнер для элемента с опытом */
+.experience-item, .legal-info-item, .team-member-item {
+    display: flex;  /* Используем flexbox */
+    justify-content: space-between;  /* Располагаем элементы по обеим сторонам */
+    align-items: center;  /* Выравнивание по центру по вертикали */
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background: none;
+}
+
+/* Поле с названием услуги */
+.service-name, .experience-name, .legal-info-name, .team-member-name {
+    width: 70%;
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+    background-color: #f0f0f0;
+    font-size: 16px;
+    color: #333;
+    text-align: left;
+    cursor: default;
+}
+
+/* Кнопка удаления - изменим стиль */
+.delete-btn {
+    background-color: #f0f0f0;  /* Цвет такой же, как у поля */
+    color: #333;  /* Цвет текста аналогичен полю */
+    padding: 5px 15px;  /* Уменьшим отступы, чтобы кнопка не была слишком большой */
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+    margin-left: 10px;  /* Отступ слева для кнопки */
+}
+
+/* Кнопка удаления при наведении */
+.delete-btn:hover {
+    background-color: #e0e0e0;  /* Сделаем немного темнее при наведении */
+}
+
+.footer {
+    background-color: #B58F5E; /* Цвет фона футера */
+    padding: 0px; /* Отступы сверху и снизу */
+    display: flex;
+    justify-content: center; /* Центрируем содержимое футера */
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px; /* Можно ограничить максимальную ширину футера */
+}
+
+.footer-left, .footer-right {
+    flex: 1;
+    text-align: center; /* Центрируем текст внутри этих блоков */
+    color: white; /* Белый цвет текста */
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Отступ между элементами */
+    /*margin-top: 10px;*/
+}
+
+.phone, .email, .address {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center; /* Выравнивание иконки и текста */
+    font-size: 18px;
+}
+
+.phone i, .email i, .address i {
+    margin-right: 8px; /* Отступ между иконкой и текстом */
+    font-size: 24px; /* Размер иконки */
+    color: white; /* Белый цвет */
+    transition: color 0.3s ease; /* Плавное изменение цвета */
+}
+
+.footer-center {
+    flex: 2;
+    text-align: center;
+}
+
+.footer img {
+    width: 250px; /* Размер логотипа */
+    height: auto;
+}

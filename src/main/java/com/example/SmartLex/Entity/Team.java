@@ -1,9 +1,6 @@
 package com.example.SmartLex.Entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,7 +15,9 @@ public class Team {
     @GeneratedValue
     private Long teamId;
     private String teamFio;
+    @Column(length = 1000)
     private String teamDesc;
+    @Column(length = 1000)
     private String photo;
 
     public Long getTeamId() {
