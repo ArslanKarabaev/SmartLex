@@ -53,7 +53,57 @@ body {
     color: white;
     border: 2px solid #192941;
 }
+/* Адаптация для экранов с шириной до 1200px (например, ноутбуки) */
+@media (max-width: 1200px) {
+    .admin-header {
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+    .admin-title {
+        font-size: 32px;
+    }
+    .request-button a {
+        font-size: 24px;
+    }
+}
 
+/* Адаптация для экранов с шириной до 768px (например, планшеты) */
+@media (max-width: 768px) {
+    .admin-header {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .logo img {
+        height: 80px;
+    }
+    .admin-title {
+        font-size: 28px;
+        margin-top: 10px;
+    }
+    .request-button a {
+        font-size: 22px;
+        padding: 8px 16px;
+    }
+}
+
+/* Адаптация для экранов с шириной до 480px (например, мобильные телефоны) */
+@media (max-width: 480px) {
+    .admin-header {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .logo img {
+        height: 60px;
+    }
+    .admin-title {
+        font-size: 24px;
+        margin-top: 10px;
+    }
+    .request-button a {
+        font-size: 20px;
+        padding: 6px 12px;
+    }
+}
 /* Main container */
 .admin-container {
     display: flex;
@@ -62,7 +112,7 @@ body {
     gap: 20px; /* Добавлено расстояние между кнопками */
     padding: 50px;
     background-color: #192941;
-    
+
 }
 
 .admin-buttons {
@@ -87,6 +137,42 @@ button {
 
 button:hover {
     background-color: #90724b;
+}
+/* Адаптация для экранов с шириной до 1200px (например, ноутбуки) */
+@media (max-width: 1400px) {
+    .admin-buttons {
+        width: calc(80% - 10px); /* Увеличение ширины кнопок для экрана меньше 1200px */
+    }
+    button {
+        font-size: 26px; /* Уменьшение шрифта */
+        padding: 15px 15px; /* Уменьшение отступов */
+    }
+}
+
+/* Адаптация для экранов с шириной до 768px (например, планшеты) */
+@media (max-width: 768px) {
+    .admin-buttons {
+        width: 100%; /* Кнопки занимают всю ширину экрана */
+        flex-direction: column; /* Размещение кнопок в столбик */
+        gap: 10px; /* Меньшее расстояние между кнопками */
+    }
+    button {
+        font-size: 22px; /* Уменьшение шрифта */
+        padding: 12px 12px; /* Уменьшение отступов */
+    }
+}
+
+/* Адаптация для экранов с шириной до 480px (например, мобильные телефоны) */
+@media (max-width: 480px) {
+    .admin-buttons {
+        width: 100%;
+        flex-direction: column;
+        gap: 8px;
+    }
+    button {
+        font-size: 18px; /* Уменьшение шрифта */
+        padding: 10px 10px; /* Уменьшение отступов */
+    }
 }
 
 /* Modal styles */
@@ -180,7 +266,7 @@ textarea {
     color: #192941;
     font-size: 16px;
     text-align: center;
-    
+
 }
 
 #photo-text{
@@ -319,4 +405,77 @@ textarea {
 .footer img {
     width: 250px; /* Размер логотипа */
     height: auto;
+}
+@media (max-width: 1200px) {
+    .footer-content {
+        flex-direction: row; /* Сохраняем горизонтальное расположение */
+        text-align: center; /* Центрируем элементы */
+    }
+
+    .footer-left, .footer-right {
+        /*flex: 1; /* Равномерное распределение */
+        margin-bottom: 10px; /* Отступ снизу */
+        margin-top: 10px;
+    }
+
+    .phone, .email, .address {
+        font-size: 16px; /* Еще больше уменьшаем размер шрифта */
+    }
+
+    .phone i, .email i, .address i {
+        font-size: 20px; /* Еще меньше иконки */
+    }
+
+    .footer img {
+        width: 150px; /* Уменьшаем размер логотипа */
+    }
+}
+@media (max-width: 876px) {
+    .footer-content {
+        flex-direction: row; /* Сохраняем горизонтальное расположение */
+        text-align: center; /* Центрируем элементы */
+    }
+
+    .footer-left, .footer-right {
+        /*flex: 1; /* Равномерное распределение */
+        margin-bottom: 10px; /* Отступ снизу */
+        margin-top: 10px;
+    }
+
+    .phone, .email, .address {
+        font-size: 12px; /* Еще больше уменьшаем размер шрифта */
+    }
+
+    .phone i, .email i, .address i {
+        font-size: 15px; /* Еще меньше иконки */
+    }
+
+    .footer img {
+        width: 100px; /* Уменьшаем размер логотипа */
+    }
+}
+
+@media (max-width: 576px) {
+    .footer-content {
+        flex-direction: row; /* Сохраняем горизонтальное расположение */
+        text-align: center; /* Центрируем элементы */
+    }
+
+    .footer-left, .footer-right {
+        /*flex: 1; /* Равномерное распределение */
+        margin-bottom: 10px; /* Отступ снизу */
+        margin-top: 10px;
+    }
+
+    .phone, .email, .address {
+        font-size: 9px; /* Еще больше уменьшаем размер шрифта */
+    }
+
+    .phone i, .email i, .address i {
+        font-size: 13px; /* Еще меньше иконки */
+    }
+
+    .footer img {
+        width: 90px; /* Уменьшаем размер логотипа */
+    }
 }

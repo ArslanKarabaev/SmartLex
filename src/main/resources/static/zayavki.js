@@ -41,49 +41,49 @@ document.addEventListener("DOMContentLoaded", () => {
     async function updateApplicationStatus(event) {
         const checkbox = event.target;
         const applicationItem = checkbox.closest(".application-item");
-    
+
         // Получаем ID заявки из атрибута data-id
         const applicationId = applicationItem ? applicationItem.dataset.id : 0;
-    
+
         if (!applicationId || isNaN(applicationId)) {
             console.error("Ошибка: ID заявки не указан или неверный");
             return;
         }
-    
+
         const isChecked = checkbox.checked;
-    
+
         // Логирование значений для отладки
         console.log("ID заявки:", applicationId);
         console.log("Связались:", isChecked);
-    
+
         const requestData = {
             id: parseInt(applicationId, 10), // Преобразуем id в число
             contacted: isChecked // Булевое значение
         };
-    
+
         console.log("Отправляемые данные:", requestData);
-    
+
         try {
             const response = await fetch("api/v1/SmartLex/AdMiNbAkYt1/updateContactedStatus", {
                 method: "PUT",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(requestData)
             });
-    
+
             if (!response.ok) {
                 const errorText = await response.text();
                 throw new Error(`Ошибка при обновлении (код ${response.status}): ${errorText}`);
             }
-    
+
             console.log(`Заявка ${applicationId} обновлена: contacted = ${isChecked}`);
         } catch (error) {
             console.error("Ошибка при обновлении статуса заявки:", error);
         }
     }
-    
-    
-    
-    
+
+
+
+
 
     loadApplications(); // Загрузка заявок при открытии страницы
     setInterval(loadApplications, 30000); // Обновление заявок каждые 30 секунд
@@ -103,20 +103,20 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }*/
 
-    /*// Сортировка заявок по времени
-    function sortApplications() {
-        const applications = Array.from(document.querySelectorAll('.application-item'));
-        
-        applications.sort((a, b) => {
-            const timeA = new Date(a.dataset.time).getTime();
-            const timeB = new Date(b.dataset.time).getTime();
-            return timeA - timeB;  // Сортируем по времени от более раннего к более позднему
-        });
+/*// Сортировка заявок по времени
+function sortApplications() {
+    const applications = Array.from(document.querySelectorAll('.application-item'));
 
-        const container = document.getElementById("application-container");
-        applications.forEach(app => container.appendChild(app));  // Добавляем отсортированные заявки обратно в контейнер
-    }
+    applications.sort((a, b) => {
+        const timeA = new Date(a.dataset.time).getTime();
+        const timeB = new Date(b.dataset.time).getTime();
+        return timeA - timeB;  // Сортируем по времени от более раннего к более позднему
+    });
 
-    // Вначале отсортируем все заявки
-    sortApplications();*/
+    const container = document.getElementById("application-container");
+    applications.forEach(app => container.appendChild(app));  // Добавляем отсортированные заявки обратно в контейнер
+}
+
+// Вначале отсортируем все заявки
+sortApplications();*/
 //});

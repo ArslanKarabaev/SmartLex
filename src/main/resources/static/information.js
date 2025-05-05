@@ -48,3 +48,12 @@ function toggleDescriptionOnClick(section) {
         event.stopPropagation(); // Останавливаем распространение события по дереву
     });
 }
+//для бургера
+document.addEventListener('DOMContentLoaded', function () {
+    const burger = document.querySelector('.burger-menu');
+    const nav = document.querySelector('nav ul');
+
+    burger.addEventListener('click', function () {
+        nav.classList.toggle('active');
+    });
+});

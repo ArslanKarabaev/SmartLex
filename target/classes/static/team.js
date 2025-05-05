@@ -7,15 +7,15 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     fetch("api/v1/SmartLex/Team/getAllTeam")
-    .then(response => response.json())
-    .then(data => {
-        const teamContainer = document.querySelector(".team-container");
-        teamContainer.innerHTML = ""; // Очищаем контейнер перед добавлением новых данных
+        .then(response => response.json())
+        .then(data => {
+            const teamContainer = document.querySelector(".team-container");
+            teamContainer.innerHTML = ""; // Очищаем контейнер перед добавлением новых данных
 
-        data.forEach(employee => {
-            const photoUrl = `${employee.photo}`; // Добавляем полный путь к изображению
+            data.forEach(employee => {
+                const photoUrl = `${employee.photo}`; // Добавляем полный путь к изображению
 
-            const memberHTML = `
+                const memberHTML = `
                 <a href="employee-detail.html?id=${employee.teamId}" class="team-member">
                     <div class="inner-container">
                         <img src="${photoUrl}" alt="${employee.teamFio}">
@@ -23,9 +23,18 @@ document.addEventListener("DOMContentLoaded", () => {
                     </div>
                 </a>
             `;
-            teamContainer.innerHTML += memberHTML;
-        });
-    })
-    .catch(error => console.error("Ошибка загрузки сотрудников:", error));
+                teamContainer.innerHTML += memberHTML;
+            });
+        })
+        .catch(error => console.error("Ошибка загрузки сотрудников:", error));
 });
 
+//для бургера
+document.addEventListener('DOMContentLoaded', function () {
+    const burger = document.querySelector('.burger-menu');
+    const nav = document.querySelector('nav ul');
+
+    burger.addEventListener('click', function () {
+        nav.classList.toggle('active');
+    });
+});

@@ -5,7 +5,8 @@
 body {
     margin: 0;
     padding: 0;
-    padding-top: 103px; 
+    padding-top: 100px;
+    overflow-x: hidden; /* ✅ Запрещает горизонтальный скролл */
 }
 
 html{
@@ -17,7 +18,7 @@ header {
     justify-content: space-between;
     align-items: center;
     background-color: #B58F5E;
-    padding: 0px 90px;
+    padding: 0px 70px;
     position: fixed; /* Фиксируем хедер */
     top: 0;
     left: 0;
@@ -30,10 +31,8 @@ header {
 }
 
 nav {
-    flex-grow: 0;
-    /*text-align: center;*/
-    display: flex;
-    justify-content: center;
+    flex-grow: 1;
+    text-align: center;
 }
 
 nav ul {
@@ -41,18 +40,18 @@ nav ul {
     padding: 0;
     margin: 0;
     display: flex;
-    /*justify-content: center;*/
+    justify-content: center;
 }
 
 nav ul li {
-    margin: 0 10px;
+    margin: 0 8px;
 }
 
 nav .nav-link {
     text-decoration: none;
-    font-size: 24px;
+    font-size: 22px;
     color: white;
-    padding: 10px 20px;
+    padding: 8px 16px;
     border-radius: 30px;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -68,11 +67,12 @@ nav .nav-link:hover {
     background-color: #192941;
     color: white;
 }
+
 .contact-btn {
-    font-size: 24px;
+    font-size: 22px;
     color: white;
     background-color: transparent;
-    padding: 10px 20px;
+    padding: 8px 16px;
     border-radius: 30px;
     border: 2px solid white;
     cursor: pointer;
@@ -87,25 +87,17 @@ nav .nav-link:hover {
     color: white;
     border: 2px solid #192941;
 }
-
-/* 🌟 АДАПТИВНОСТЬ */
-
-/* Планшеты */
-@media (max-width: 1024px) {
-    header {
-        padding: 15px 50px;
+/* Планшеты и небольшие ноутбуки */
+@media (max-width: 1300px) {
+    body{
+        padding-top: 60px;
     }
-
     .logo img {
         height: 70px;
     }
 
-    nav ul {
-        flex-direction: row;
-    }
-
     nav .nav-link {
-        font-size: 18px;
+        font-size: 17px;
         padding: 6px 12px;
     }
 
@@ -115,10 +107,59 @@ nav .nav-link:hover {
     }
 }
 
+/* Ещё меньше: планшеты и маленькие ноуты типа MacBook Air */
+@media (max-width: 1080px) and (min-width: 900px)  {
+    body{
+        padding-top: 60px;
+    }
+    .logo img {
+        height: 55px;
+    }
+
+    nav .nav-link {
+        font-size: 13px;
+        padding: 5px 8px;
+    }
+    nav ul li {
+        margin: 0 5px;
+    }
+
+    .contact-btn {
+        font-size: 14px;
+        padding: 5px 10px;
+    }
+}
+@media (max-width: 900px) and (min-width: 770px)  {
+    body{
+        padding-top: 40px;
+    }
+    .logo img {
+        height: 45px;
+    }
+    nav{
+        margin-left: -90px;
+    }
+    nav .nav-link {
+        font-size: 13px;
+        padding: 5px 8px;
+    }
+    nav ul li {
+        margin: 0 3px;
+    }
+
+    .contact-btn {
+        font-size: 12px;
+        padding: 5px 8px;
+    }
+}
+
 /* Мобильные устройства */
 @media (max-width: 768px) {
+    body {
+        padding-top: 80px; /* Для мобильных */
+    }
     header {
-        padding: 15px 30px;
+        padding: 10px 20px;
         flex-wrap: wrap;
         justify-content: space-between;
     }
@@ -149,9 +190,16 @@ nav .nav-link:hover {
         margin: 10px 0;
     }
 
+    nav .nav-link {
+        font-size: 16px;
+        padding: 6px 10px;
+    }
+
     .contact-btn {
         font-size: 18px;
-        padding: 6px 10px;
+        /*padding: 6px 10px;*/
+        margin-right: 50px;
+
     }
 
     /* Бургер-меню */
@@ -255,13 +303,13 @@ nav .nav-link:hover {
 /* Облако с абсолютным позиционированием */
 .clouds {
     position: absolute;
-    width: 100vw; /* Облако занимает больше половины экрана */
-    max-width: 790px; 
+    width: 100%; /* Облако занимает больше половины экрана */
+    max-width: 790px;
     transform: scaleX(1.8); /* Растягиваем по горизонтали */
     /*transform-origin: left; /* Расширяем облако вправо */
     animation: floatCloud 6s ease-in-out infinite alternate; /* Плавное движение */
     z-index: 1; /* Облако за текстом */
-    
+
 }
 
 /* Статуя, расположенная поверх облака */
@@ -286,96 +334,107 @@ nav .nav-link:hover {
     width: 700px; /* Размер статуи */
 }
 
+/* Адаптация для экранов с шириной до 1200px (например, ноутбуки) */
+@media (max-width: 1400px) {
+    .text-content {
+        font-size: 50px; /* Уменьшаем шрифт */
+        padding-left: 30px;
+    }
 
+    .text-content h2 {
+        font-size: 55px; /* Уменьшаем размер текста для заголовков */
+    }
 
-.branding-section {
-    position: relative;
-    width: 100%;
-}
+    .clouds {
+        width: 60vw; /* Облако чуть меньше */
+    }
 
-.white-section {
-    background-color: #F0EEEA;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 50px;
-    position: relative;
-}
-.white-section .logo {
-    position: absolute;
-    left: 65%;
-}
-.white-section .text {
-    text-align: center;
-    font-family: 'Times New Roman', Times, serif;
-    padding-left: 70%;
-}
-.white-section p {
-    font-size: 26px;
-    margin: 0;
-    letter-spacing: 3px;
-    font-weight: 550;
-}
-.advocacia {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 5px;
-    width: 100%;
-    position: relative;
-    
-}
+    .statue {
+        max-width: 35%;
+        right: 45%;
+    }
 
-.advocacia::before,
-.advocacia::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    width: 40%; /* Длина линий будет 40% от родительского контейнера */
-    height: 1px;
-    background-color: black;
+    .statue img {
+        width: 600px; /* Уменьшаем размер статуи */
+    }
+}
+@media (max-width: 1100px) {
+    .text-content {
+        font-size: 50px; /* Уменьшаем шрифт */
+        padding-left: 30px;
+    }
+
+    .text-content h2 {
+        font-size: 50px; /* Уменьшаем размер текста для заголовков */
+    }
+
+    .clouds {
+        width: 55vw; /* Облако чуть меньше */
+    }
+
+    .statue {
+        max-width: 35%;
+        right: 45%;
+    }
+
+    .statue img {
+        width: 600px; /* Уменьшаем размер статуи */
+    }
 }
 
-.advocacia::before {
-    left: -50px; /* Линия слева */
+/* Адаптация для экранов с шириной до 768px (например, планшеты) */
+@media (max-width: 900px) {
+    .text-content {
+        font-size: 40px; /* Уменьшаем шрифт */
+        padding-left: 20px;
+    }
+
+    .text-content h2 {
+        font-size: 35px; /* Уменьшаем размер текста */
+    }
+
+    .clouds {
+        width: 60vw; /* Облако меньше */
+    }
+
+    .statue {
+        max-width: 40%;
+        right: 45%;
+        top: 20%;
+    }
+
+    .statue img {
+        width: 400px; /* Уменьшаем размер статуи */
+    }
 }
 
-.advocacia::after {
-    right: -50px; /* Линия справа */
-}
+/* Адаптация для экранов с шириной до 480px (например, мобильные телефоны) */
+@media (max-width: 600px) {
+    .text-content {
+        font-size: 30px; /* Уменьшаем шрифт */
+        padding-left: 10px;
+    }
 
-.advocacia span {
-    padding: 0 10px; /* Отступ от линий для текста */
-}
+    .text-content h2 {
+        font-size: 25px; /* Уменьшаем размер текста */
+        margin: 5px 0;
+    }
+    .images {
+        height: 400px; /* Меньше высота на планшетах */
+    }
+    .clouds {
+        width: 50vw; /* Облако меньше */
+    }
 
-.blue-container {
-    background-color: #0e1f3d;
-    padding: 0; /* Убираем все отступы */
-    margin: 0; /* Убираем все отступы по краям */
-    display: flex;
-    width: 100%; /* Контейнер занимает всю ширину экрана */
-    background-image: url('images/Group\ 2.svg');
-    /*background-repeat: repeat-x; /* Повторить изображение по горизонтали */
-    /*background-size: 100px auto; /* Уменьшаем размер фона, чтобы расстояние между изображениями было меньше */
-}
+    .statue {
+        max-width: 90%;
+        right: 15%;
+        top: 30%;
+    }
 
-
-.circle-logo {
-    position: absolute;
-    left: 70px;
-    top: 25%;
-    transform: translateY(-50%);
-    width: 450px;
-    height: 450px;
-    background-color: #b38b5e;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.circle-logo img {
-    width: 90%;
+    .statue img {
+        width: 170px; /* Уменьшаем размер статуи */
+    }
 }
 
 .about-container {
@@ -417,7 +476,7 @@ nav .nav-link:hover {
     border-radius: 90px; /* Закругленные углы */
     display: inline-block; /* Чтобы заголовок был маленьким и не растягивался по всему контейнеру */
     margin-bottom: 30px; /* Отступ снизу */
-    
+
 }
 
 .about-content {
@@ -438,7 +497,7 @@ nav .nav-link:hover {
 .about-description {
     font-family: 'Cormorant Infant', serif;
     font-weight: lighter; /* Используем легкую версию шрифта */
-    font-size: 30px; /* Размер шрифта */
+    font-size: 26px; /* Размер шрифта */
     color: #333; /* Цвет текста */
     line-height: 1.5; /* Высота строки для улучшения читаемости */
     opacity: 0; /* Начальная непрозрачность */
@@ -469,6 +528,115 @@ nav .nav-link:hover {
 .visible-content {
     transform: translateX(0);
     opacity: 1;
+}
+@media (max-width: 1200px) {
+    .about-container {
+        padding: 20px; /* Добавим отступы по бокам */
+    }
+
+    .bluelogoimage {
+        padding-left: 0;
+        max-width: 80%;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .about-text {
+        padding-left: 0;
+        text-align: center;
+        padding-top: 30px;
+    }
+
+    .about-text .about-title {
+        font-size: 28px;
+        padding: 4px 14px;
+    }
+
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .about-image {
+        width: 200px;
+        margin: 0 0 20px 0;
+    }
+
+    .about-description {
+        font-size: 18px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+@media (max-width: 768px) {
+    .about-container {
+        padding: 20px; /* Добавим отступы по бокам */
+    }
+
+    .bluelogoimage {
+        padding-left: 0;
+        max-width: 80%;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .about-text {
+        padding-left: 0;
+        text-align: center;
+        padding-top: 30px;
+    }
+
+    .about-text .about-title {
+        font-size: 28px;
+        padding: 4px 14px;
+    }
+
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .about-image {
+        width: 200px;
+        margin: 0 0 20px 0;
+    }
+
+    .about-description {
+        font-size: 18px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+/* 📱 Телефоны (до 480px) */
+@media (max-width: 480px) {
+    .bluelogoimage {
+        max-width: 100%;
+    }
+
+    .about-text .about-title {
+        font-size: 22px;
+        padding: 3px 12px;
+    }
+
+    .about-image {
+        width: 160px;
+    }
+
+    .about-content {
+        flex-direction: column; /* чтобы картинка и текст стали вертикально */
+        align-items: center; /* выравнивание по центру */
+    }
+
+    .about-description {
+        font-size: 14px;
+        line-height: 1.4;
+        padding-left: 20px;
+        padding-right: 20px;
+
+    }
 }
 
 .services-container {
@@ -516,6 +684,61 @@ nav .nav-link:hover {
     opacity: 0.7; /* Прозрачность при ховере */
     color: white;
 }
+
+@media (max-width: 768px) {
+    .services-title {
+        font-size: 40px; /* Уменьшаем заголовок для планшетов */
+    }
+
+    .services-list {
+        display: flex;
+        flex-direction: column; /* Вертикально, по одной */
+        align-items: center; /* Центрируем по горизонтали */
+        justify-content: center; /* Центрируем по вертикали */
+        width: 90%;
+        padding-left: 0;
+    }
+
+    .service-item {
+        width: 80%; /* Почти вся ширина для планшетов */
+        font-size: 24px;
+        padding: 18px;
+        margin: 15px 0;
+        text-align: center; /* Центрируем текст внутри элемента */
+    }
+
+    .service-image {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .services-title {
+        font-size: 32px; /* Еще меньше на телефоне */
+    }
+
+    .services-list {
+        display: flex;
+        flex-direction: column; /* Вертикально, по одной */
+        align-items: center; /* Центрируем по горизонтали */
+        justify-content: center; /* Центрируем по вертикали */
+        width: 90%;
+        padding-left: 0;
+    }
+
+    .service-item {
+        width: 90%; /* Почти вся ширина на телефоне */
+        font-size: 22px;
+        padding: 15px;
+        margin: 10px 0;
+        text-align: center; /* Центрируем текст внутри элемента */
+    }
+
+    .service-image {
+        width: 92%;
+    }
+}
+
 
 .footer {
     background-color: #B58F5E; /* Цвет фона футера */
@@ -567,6 +790,56 @@ nav .nav-link:hover {
     height: auto;
 }
 
+/* Адаптация футера для планшетов и мобильных устройств */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: row; /* Сохраняем горизонтальное расположение */
+        text-align: center; /* Центрируем элементы */
+    }
+
+    .footer-left, .footer-right {
+        flex: 1; /* Равномерное распределение */
+        margin-bottom: 10px; /* Отступ снизу */
+        margin-top: 10px;
+    }
+
+    .phone, .email, .address {
+        font-size: 16px; /* Уменьшаем размер шрифта */
+    }
+
+    .phone i, .email i, .address i {
+        font-size: 20px; /* Уменьшаем размер иконок */
+    }
+
+    .footer img {
+        width: 120px; /* Уменьшаем размер логотипа */
+    }
+}
+
+@media (max-width: 576px) {
+    .footer-content {
+        flex-direction: row; /* Сохраняем горизонтальное расположение */
+        text-align: center; /* Центрируем элементы */
+    }
+
+    .footer-left, .footer-right {
+        /*flex: 1; /* Равномерное распределение */
+        margin-bottom: 10px; /* Отступ снизу */
+        margin-top: 10px;
+    }
+
+    .phone, .email, .address {
+        font-size: 9px; /* Еще больше уменьшаем размер шрифта */
+    }
+
+    .phone i, .email i, .address i {
+        font-size: 13px; /* Еще меньше иконки */
+    }
+
+    .footer img {
+        width: 90px; /* Уменьшаем размер логотипа */
+    }
+}
 
 /* Затемнение фона при открытии модалки */
 body.modal-open {
@@ -654,4 +927,60 @@ select{
 .modal.show {
     visibility: visible;
     opacity: 1;
+}
+
+/* Адаптация для планшетов и мобильных устройств */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 80%;
+        height: auto; /* Автоматическая высота для адаптации */
+        padding: 15px;
+    }
+
+    .modal-title {
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+
+    input, select {
+        font-size: 18px;
+        padding: 8px;
+    }
+
+    .submit-btn {
+        font-size: 20px;
+        width: 60%;
+        margin-bottom: 10px;
+    }
+
+    .close-btn {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 576px) {
+    .modal-content {
+        width: 90%;
+        padding: 10px;
+    }
+
+    .modal-title {
+        font-size: 20px;
+        margin-bottom: 25px;
+    }
+
+    input, select {
+        font-size: 16px;
+        padding: 6px;
+    }
+
+    .submit-btn {
+        font-size: 18px;
+        width: 70%;
+        margin-bottom: 10px;
+    }
+
+    .close-btn {
+        font-size: 26px;
+    }
 }

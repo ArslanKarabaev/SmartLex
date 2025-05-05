@@ -1,62 +1,62 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const links = document.querySelectorAll('.nav-link');
-  const sections = document.querySelectorAll('section, .about-container, .services-container');
-  const offset = 150;
+    const links = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('section, .about-container, .services-container');
+    const offset = 150;
 
-  function updateActiveLink() {
-      let currentActive = null;
+    function updateActiveLink() {
+        let currentActive = null;
 
-      sections.forEach(section => {
-          const sectionTop = section.offsetTop - offset;
-          const sectionHeight = section.clientHeight;
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - offset;
+            const sectionHeight = section.clientHeight;
 
-          if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-              currentActive = section.getAttribute('id');
-          }
-      });
+            if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                currentActive = section.getAttribute('id');
+            }
+        });
 
-      // Проверяем, если в самом верху — активна только "Главная"
-      if (window.scrollY < 2000) {
-          currentActive = "main";
-      }
+        // Проверяем, если в самом верху — активна только "Главная"
+        if (window.scrollY < 2000) {
+            currentActive = "main";
+        }
 
-      links.forEach(link => {
-          link.classList.remove('active');
-          if (currentActive && link.getAttribute('href').endsWith(`#${currentActive}`)) {
-              link.classList.add('active');
-          }
-      });
-  }
+        links.forEach(link => {
+            link.classList.remove('active');
+            if (currentActive && link.getAttribute('href').endsWith(`#${currentActive}`)) {
+                link.classList.add('active');
+            }
+        });
+    }
 
-  window.addEventListener('scroll', updateActiveLink);
-  updateActiveLink();
+    window.addEventListener('scroll', updateActiveLink);
+    updateActiveLink();
 });
 
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  fetchServices();  // Вызов функции для загрузки услуг при загрузке страницы
+    fetchServices();  // Вызов функции для загрузки услуг при загрузке страницы
 });
 
 // Функция для загрузки услуг
 async function fetchServices() {
-  try {
-      const response = await fetch('api/v1/SmartLex/Services'); // Ваш API
-      const data = await response.json(); // Получаем данные в формате JSON
-      
-      const servicesContainer = document.querySelector('.services-list'); // Контейнер для услуг
-      servicesContainer.innerHTML = ''; // Очищаем контейнер перед загрузкой новых данных
+    try {
+        const response = await fetch('api/v1/SmartLex/Services'); // Ваш API
+        const data = await response.json(); // Получаем данные в формате JSON
 
-      // Динамически добавляем услуги
-      data.forEach(service => {
-          const serviceItem = document.createElement('div');
-          serviceItem.classList.add('service-item');
-          serviceItem.innerHTML = service.name; // Изменяем, чтобы отображать название услуги
-          servicesContainer.appendChild(serviceItem);
-      });
-  } catch (error) {
-      console.error('Ошибка загрузки услуг:', error);
-  }
+        const servicesContainer = document.querySelector('.services-list'); // Контейнер для услуг
+        servicesContainer.innerHTML = ''; // Очищаем контейнер перед загрузкой новых данных
+
+        // Динамически добавляем услуги
+        data.forEach(service => {
+            const serviceItem = document.createElement('div');
+            serviceItem.classList.add('service-item');
+            serviceItem.innerHTML = service.name; // Изменяем, чтобы отображать название услуги
+            servicesContainer.appendChild(serviceItem);
+        });
+    } catch (error) {
+        console.error('Ошибка загрузки услуг:', error);
+    }
 }
 
 //animation
@@ -105,4 +105,3 @@ document.addEventListener('DOMContentLoaded', function () {
         nav.classList.toggle('active');
     });
 });
-

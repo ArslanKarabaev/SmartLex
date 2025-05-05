@@ -8,173 +8,173 @@
     <link href="https://unpkg.com/boxicons/css/boxicons.min.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Header -->
-    <header class="admin-header">
-        <div class="logo">
-            <img src="images/bluelogo.png" alt="Логотип">
-        </div>
-        <div class="admin-title">ADMIN</div>
-        <div class="request-button">
-            <a href="zayavki.html">Заявки</a>
-        </div>
-    </header>
+<!-- Header -->
+<header class="admin-header">
+    <div class="logo">
+        <img src="images/bluelogo.png" alt="Логотип">
+    </div>
+    <div class="admin-title">ADMIN</div>
+    <div class="request-button">
+        <a href="zayavki.html">Заявки</a>
+    </div>
+</header>
 
-    <!-- Main container -->
-    <div class="admin-container">
-        <div class="admin-buttons">
-            <button id="add-service">Добавить услугу</button>
-            <button id="delete-service">Удалить услугу</button>
-        </div>
-        <div class="admin-buttons">
-            <button id="add-experience">Добавить опыт</button>
-            <button id="delete-experience">Удалить опыт</button>
-        </div>
-        <div class="admin-buttons">
-            <button id="add-legal-info">Добавить правовую информацию</button>
-            <button id="delete-legal-info">Удалить правовую информацию</button>
-        </div>
-        <div class="admin-buttons">
-            <button id="add-team-member">Добавить члена команды</button>
-            <button id="delete-team-member">Удалить члена команды</button>
-        </div>
+<!-- Main container -->
+<div class="admin-container">
+    <div class="admin-buttons">
+        <button id="add-service">Добавить услугу</button>
+        <button id="delete-service">Удалить услугу</button>
     </div>
-    
-    <!-- Modals -->
-    <!-- Add Service Modal -->
-    <div id="add-service-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" id="close-service-modal">&times;</span>
-            <h2 class="modal-title">Новая услуга</h2>
-            <input type="text" id="service-name" placeholder="Название услуги">
-            <button class="submit-btn" id="submit-service">Добавить</button>
-        </div>
+    <div class="admin-buttons">
+        <button id="add-experience">Добавить опыт</button>
+        <button id="delete-experience">Удалить опыт</button>
     </div>
-    
-    <!-- Add Experience Modal -->
-    <div id="add-experience-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" id="close-experience-modal">&times;</span>
-            <h2 class="modal-title">Новый опыт</h2>
-            <input type="text" id="experience-name" placeholder="Название опыта">
-            <textarea id="experience-description" placeholder="Описание опыта"></textarea>
-            <button class="submit-btn" id="submit-experience">Добавить</button>
-        </div>
+    <div class="admin-buttons">
+        <button id="add-legal-info">Добавить правовую информацию</button>
+        <button id="delete-legal-info">Удалить правовую информацию</button>
     </div>
-    
-    <!-- Add Legal Info Modal -->
-    <div id="add-legal-info-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" id="close-legal-info-modal">&times;</span>
-            <h2 class="modal-title">Новая правовая информация</h2>
-            <input type="text" id="legal-info-name" placeholder="Название правовой информации">
-            <textarea id="legal-info-description" placeholder="Описание правовой информации"></textarea>
-            <button class="submit-btn" id="submit-legal-info">Добавить</button>
-        </div>
+    <div class="admin-buttons">
+        <button id="add-team-member">Добавить члена команды</button>
+        <button id="delete-team-member">Удалить члена команды</button>
     </div>
-    
-    <!-- Add Team Member Modal -->
-    <div id="add-team-member-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" id="close-team-member-modal">&times;</span>
-            <h2 class="modal-title">Новый член команды</h2>
-            <div class="team-member-container">
-                <div class="photo-container" id="photo-preview-container">
-                    <label for="team-member-photo" class="photo-label">
-                        <span id="photo-text">Выбрать фото</span>
-                        <img id="photo-preview" src="" class="hidden">
-                    </label>
-                    <input type="file" id="team-member-photo" accept="image/*" class="hidden">
-                </div>
-                <div class="info-container">
-                    <input type="text" id="team-member-fio" placeholder="ФИО">
-                    <textarea id="team-member-description" placeholder="Описание"></textarea>
-                </div>
-            </div>
-            <button class="submit-btn" id="submit-team-member">Добавить</button>
-        </div>
-    </div>    
+</div>
 
-        <!-- Удалить услугу -->
-    <div id="delete-service-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" id="close-delete-service-modal">&times;</span>
-            <h2 class="modal-title">Услуги</h2>
-            <div id="service-list-container">
-                <!--<div class="service-item">
-                    <input type="text" value="Название услуги" disabled class="service-name" />
-                    <button class="delete-btn" onclick="deleteService(service.id)">Удалить</button>
-                </div>-->
-                <!-- Список услуг будет загружаться сюда -->
+<!-- Modals -->
+<!-- Add Service Modal -->
+<div id="add-service-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" id="close-service-modal">&times;</span>
+        <h2 class="modal-title">Новая услуга</h2>
+        <input type="text" id="service-name" placeholder="Название услуги">
+        <button class="submit-btn" id="submit-service">Добавить</button>
+    </div>
+</div>
+
+<!-- Add Experience Modal -->
+<div id="add-experience-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" id="close-experience-modal">&times;</span>
+        <h2 class="modal-title">Новый опыт</h2>
+        <input type="text" id="experience-name" placeholder="Название опыта">
+        <textarea id="experience-description" placeholder="Описание опыта"></textarea>
+        <button class="submit-btn" id="submit-experience">Добавить</button>
+    </div>
+</div>
+
+<!-- Add Legal Info Modal -->
+<div id="add-legal-info-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" id="close-legal-info-modal">&times;</span>
+        <h2 class="modal-title">Новая правовая информация</h2>
+        <input type="text" id="legal-info-name" placeholder="Название правовой информации">
+        <textarea id="legal-info-description" placeholder="Описание правовой информации"></textarea>
+        <button class="submit-btn" id="submit-legal-info">Добавить</button>
+    </div>
+</div>
+
+<!-- Add Team Member Modal -->
+<div id="add-team-member-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" id="close-team-member-modal">&times;</span>
+        <h2 class="modal-title">Новый член команды</h2>
+        <div class="team-member-container">
+            <div class="photo-container" id="photo-preview-container">
+                <label for="team-member-photo" class="photo-label">
+                    <span id="photo-text">Выбрать фото</span>
+                    <img id="photo-preview" src="" class="hidden">
+                </label>
+                <input type="file" id="team-member-photo" accept="image/*" class="hidden">
             </div>
+            <div class="info-container">
+                <input type="text" id="team-member-fio" placeholder="ФИО">
+                <textarea id="team-member-description" placeholder="Описание"></textarea>
+            </div>
+        </div>
+        <button class="submit-btn" id="submit-team-member">Добавить</button>
+    </div>
+</div>
+
+<!-- Удалить услугу -->
+<div id="delete-service-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" id="close-delete-service-modal">&times;</span>
+        <h2 class="modal-title">Услуги</h2>
+        <div id="service-list-container">
+            <!--<div class="service-item">
+                <input type="text" value="Название услуги" disabled class="service-name" />
+                <button class="delete-btn" onclick="deleteService(service.id)">Удалить</button>
+            </div>-->
+            <!-- Список услуг будет загружаться сюда -->
         </div>
     </div>
+</div>
 
-    <!-- Удалить опыт -->
-    <div id="delete-experience-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" id="close-delete-experience-modal">&times;</span>
-            <h2 class="modal-title">Опыт</h2>
-            <div id="experience-list-container">
-                <!--<div class="experience-item" data-exp-id="1">
-                    <input type="text" value="Название Опыта" disabled class="experience-name" />
-                    <button class="delete-btn" onclick="deleteExperience(1)">Удалить</button>
-                </div>-->
-                <!-- Список опыта будет загружаться сюда -->
-            </div>
+<!-- Удалить опыт -->
+<div id="delete-experience-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" id="close-delete-experience-modal">&times;</span>
+        <h2 class="modal-title">Опыт</h2>
+        <div id="experience-list-container">
+            <!--<div class="experience-item" data-exp-id="1">
+                <input type="text" value="Название Опыта" disabled class="experience-name" />
+                <button class="delete-btn" onclick="deleteExperience(1)">Удалить</button>
+            </div>-->
+            <!-- Список опыта будет загружаться сюда -->
         </div>
     </div>
+</div>
 
-    <!-- Удалить правовую информацию -->
-    <div id="delete-legal-info-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" id="close-delete-legal-info-modal">&times;</span>
-            <h2 class="modal-title">Правовая информация</h2>
-            <div id="legal-info-list-container">
-                <!--<div class="legal-info-item">
-                    <input type="text" value="Название" disabled class="legal-info-name" />
-                    <button class="delete-btn" onclick="deleteLegalInfo(1)">Удалить</button>
-                </div>-->
-                <!-- Список правовой информации будет загружаться сюда -->
-            </div>
+<!-- Удалить правовую информацию -->
+<div id="delete-legal-info-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" id="close-delete-legal-info-modal">&times;</span>
+        <h2 class="modal-title">Правовая информация</h2>
+        <div id="legal-info-list-container">
+            <!--<div class="legal-info-item">
+                <input type="text" value="Название" disabled class="legal-info-name" />
+                <button class="delete-btn" onclick="deleteLegalInfo(1)">Удалить</button>
+            </div>-->
+            <!-- Список правовой информации будет загружаться сюда -->
         </div>
     </div>
+</div>
 
-    <!-- Удалить члена команды -->
-    <div id="delete-team-member-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" id="close-delete-team-member-modal">&times;</span>
-            <h2 class="modal-title">Команда</h2>
-            <div id="team-member-list-container">
-                <!--<div class="team-member-item">
-                    <input type="text" value="ФИО" disabled class="team-member-name" />
-                    <button class="delete-btn" onclick="deleteTeamMember(1)">Удалить</button>
-                </div>-->
-                <!-- Список членов команды будет загружаться сюда -->
-            </div>
+<!-- Удалить члена команды -->
+<div id="delete-team-member-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" id="close-delete-team-member-modal">&times;</span>
+        <h2 class="modal-title">Команда</h2>
+        <div id="team-member-list-container">
+            <!--<div class="team-member-item">
+                <input type="text" value="ФИО" disabled class="team-member-name" />
+                <button class="delete-btn" onclick="deleteTeamMember(1)">Удалить</button>
+            </div>-->
+            <!-- Список членов команды будет загружаться сюда -->
         </div>
     </div>
+</div>
 
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-left">
-                <a href="tel:+996555555555" class="phone">
-                    <i class='bx bx-phone' style='color:#ffffff'  ></i> +996 555 555 555
-                </a>
-                <p class="email">
-                    <i class='bx bx-envelope' style='color:#ffffff'  ></i>info@smartlex.kg
-                </p> 
-            </div>
-            <div class="footer-center">
-                <img src="images/bluelogoline.png" alt="Logo"> <!-- Логотип -->
-            </div>
-            <div class="footer-right">
-                <p class="address">
-                    <i class='bx bx-map' style='color:#ffffff'></i> ул. Асмпирто 1, Бишкек
-                </p>
-            </div>
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-left">
+            <a href="tel:+996555555555" class="phone">
+                <i class='bx bx-phone' style='color:#ffffff'  ></i> +996 555 555 555
+            </a>
+            <p class="email">
+                <i class='bx bx-envelope' style='color:#ffffff'  ></i>info@smartlex.kg
+            </p>
         </div>
-    </footer>
+        <div class="footer-center">
+            <img src="images/bluelogoline.png" alt="Logo"> <!-- Логотип -->
+        </div>
+        <div class="footer-right">
+            <p class="address">
+                <i class='bx bx-map' style='color:#ffffff'></i> ул. Асмпирто 1, Бишкек
+            </p>
+        </div>
+    </div>
+</footer>
 
-    <script src="admin-dashboard.js"></script>
+<script src="admin-dashboard.js"></script>
 </body>
 </html>

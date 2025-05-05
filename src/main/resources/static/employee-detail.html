@@ -8,77 +8,83 @@
     <link href="https://unpkg.com/boxicons/css/boxicons.min.css" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <img src="images/bluelogo.png" alt="Логотип">
-        </div>
-        <nav>
-            <ul>
-                <li><a href="main.html#main" class="nav-link">Главная</a></li>
-                <li><a href="main.html#services_id" class="nav-link">Услуги</a></li>
-                <li><a href="experience.html" class="nav-link">Опыт</a></li>
-                <li><a href="team.html" class="nav-link active">Команда</a></li>
-                <li><a href="information.html" class="nav-link">Правовая информация</a></li>
-            </ul>
-        </nav>
-        <button id="open-modal" class="contact-btn">Связаться</button>
-    </header>
+<header>
+    <div class="logo">
+        <img src="images/bluelogo.png" alt="Логотип">
+    </div>
+    <!-- Бургер-меню -->
+    <div class="burger-menu">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="main.html#main" class="nav-link">Главная</a></li>
+            <li><a href="main.html#services_id" class="nav-link">Услуги</a></li>
+            <li><a href="experience.html" class="nav-link">Опыт</a></li>
+            <li><a href="team.html" class="nav-link active">Команда</a></li>
+            <li><a href="information.html" class="nav-link">Правовая информация</a></li>
+        </ul>
+    </nav>
+    <button id="open-modal" class="contact-btn">Связаться</button>
+</header>
 
-    <section class="employee-detail-section">
-        <a href="team.html" class="back-arrow"><i class='bx bx-arrow-back' ></i> </a> <!-- Стрелка назад -->
-        <div class="employee-detail-container">
-            <div class="employee-left">
-                <p class="employee-name" id="employee-name">Adfg Dfgh Vfghj</p>
-                <div class="photo-container">
-                    <img id="employee-photo" src="images/lawyer.jpg" alt="Фото адвоката">
-                </div>
-            </div>
-            <div class="employee-right">
-                <h3>Полная информация:</h3>
-                <p><strong>Описание:</strong> <span id="employee-description">Описание сотрудника</span></p>
+<section class="employee-detail-section">
+    <a href="team.html" class="back-arrow"><i class='bx bx-arrow-back' ></i> </a> <!-- Стрелка назад -->
+    <div id="employee-detail-container" class="employee-detail-container">
+         <div class="employee-left">
+            <p class="employee-name" id="employee-name"></p>
+            <div class="photo-container">
+                <img id="employee-photo">
             </div>
         </div>
-    </section>
-    
-    <!-- Модальное окно -->
-    <div id="contact-modal" class="modal hidden">
-        <div class="modal-content">
-            <h2 class="modal-title">Оставьте свои данные</h2>
-            <form id="contact-form">
-                <input type="text" id="contact-name" placeholder="Имя Фамилия" required>
-                <input type="tel" id="contact-phone" placeholder="Номер телефона" required>
-                <select id="contact-service" required>
-                    <option value="" disabled selected>Выберите услугу</option>
-                </select>
-                <button type="submit" class="submit-btn">Отправить</button>
-            </form>
-            <button class="close-btn">&times;</button>
+        <div class="employee-right">
+            <h3>Полная информация:</h3>
+            <p><strong>Описание:</strong> <span id="employee-description"></span></p>
         </div>
     </div>
+</section>
 
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-left">
-                <a href="tel:+996555555555" class="phone">
-                    <i class='bx bx-phone' style='color:#ffffff'  ></i> +996 555 555 555
-                </a>
-                <p class="email">
-                    <i class='bx bx-envelope' style='color:#ffffff'  ></i>info@smartlex.kg
-                </p> 
-            </div>
-            <div class="footer-center">
-                <img src="images/bluelogoline.png" alt="Logo"> <!-- Логотип -->
-            </div>
-            <div class="footer-right">
-                <p class="address">
-                    <i class='bx bx-map' style='color:#ffffff'></i> ул. Асмит 1, Бишкек
-                </p>
-            </div>
+<!-- Модальное окно -->
+<div id="contact-modal" class="modal hidden">
+    <div class="modal-content">
+        <h2 class="modal-title">Оставьте свои данные</h2>
+        <form id="contact-form">
+            <input type="text" id="contact-name" placeholder="Имя Фамилия" required>
+            <input type="tel" id="contact-phone" placeholder="Номер телефона" required>
+            <select id="contact-service" required>
+                <option value="" disabled selected>Выберите услугу</option>
+            </select>
+            <button type="submit" class="submit-btn">Отправить</button>
+        </form>
+        <button class="close-btn">&times;</button>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-left">
+            <a href="tel:+996555555555" class="phone">
+                <i class='bx bx-phone' style='color:#ffffff'  ></i> +996 555 555 555
+            </a>
+            <p class="email">
+                <i class='bx bx-envelope' style='color:#ffffff'  ></i>info@smartlex.kg
+            </p>
         </div>
-    </footer>
+        <div class="footer-center">
+            <img src="images/bluelogoline.png" alt="Logo"> <!-- Логотип -->
+        </div>
+        <div class="footer-right">
+            <p class="address">
+                <i class='bx bx-map' style='color:#ffffff'></i> ул. Асмит 1, Бишкек
+            </p>
+        </div>
+    </div>
+</footer>
 
-    <script src="employee-detail.js"></script>
-    <script src="contact.js"></script>
-    
+<script src="employee-detail.js"></script>
+<script src="contact.js"></script>
+
 </body>
 </html>

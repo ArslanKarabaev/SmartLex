@@ -52,14 +52,14 @@ document.getElementById('submit-service').addEventListener('click', () => {
         },
         body: JSON.stringify(data),
     })
-    .then(response => response.json())
-    .then(data => {
-        console.log('Service added:', data);
-        document.getElementById('add-service-modal').style.display = 'none';
-    })
-    .catch(error => {
-        console.error('Error adding service:', error);
-    });
+        .then(response => response.json())
+        .then(data => {
+            console.log('Service added:', data);
+            document.getElementById('add-service-modal').style.display = 'none';
+        })
+        .catch(error => {
+            console.error('Error adding service:', error);
+        });
 });
 
 // Добавить опыт
@@ -75,14 +75,14 @@ document.getElementById('submit-experience').addEventListener('click', () => {
         },
         body: JSON.stringify(data),
     })
-    .then(response => response.json())
-    .then(data => {
-        console.log('Experience added:', data);
-        document.getElementById('add-experience-modal').style.display = 'none';
-    })
-    .catch(error => {
-        console.error('Error adding experience:', error);
-    });
+        .then(response => response.json())
+        .then(data => {
+            console.log('Experience added:', data);
+            document.getElementById('add-experience-modal').style.display = 'none';
+        })
+        .catch(error => {
+            console.error('Error adding experience:', error);
+        });
 });
 
 // Добавить правовую информацию
@@ -98,14 +98,14 @@ document.getElementById('submit-legal-info').addEventListener('click', () => {
         },
         body: JSON.stringify(data),
     })
-    .then(response => response.json())
-    .then(data => {
-        console.log('Legal info added:', data);
-        document.getElementById('add-legal-info-modal').style.display = 'none';
-    })
-    .catch(error => {
-        console.error('Error adding legal info:', error);
-    });
+        .then(response => response.json())
+        .then(data => {
+            console.log('Legal info added:', data);
+            document.getElementById('add-legal-info-modal').style.display = 'none';
+        })
+        .catch(error => {
+            console.error('Error adding legal info:', error);
+        });
 });
 
 
@@ -119,8 +119,8 @@ document.getElementById('team-member-photo').addEventListener('change', function
         const reader = new FileReader();
         reader.onload = function(e) {
             preview.src = e.target.result; // Устанавливаем фото в контейнер
-            preview.classList.remove('hidden'); 
-            text.classList.add('hidden'); 
+            preview.classList.remove('hidden');
+            text.classList.add('hidden');
         };
         reader.readAsDataURL(file);
     }
@@ -147,18 +147,18 @@ document.getElementById('submit-team-member').addEventListener('click', () => {
         method: 'POST',
         body: formData
     })
-    .then(response => response.text()) 
-    .then(data => {
-        console.log('Team member added:', data);
-        alert("Участник успешно добавлен!");
-        // Очищаем форму
-        photoInput.value = "";
-        document.getElementById('team-member-fio').value = "";
-        document.getElementById('team-member-description').value = "";
-    })
-    .catch(error => {
-        console.error('Error adding team member:', error);
-    });
+        .then(response => response.text())
+        .then(data => {
+            console.log('Team member added:', data);
+            alert("Участник успешно добавлен!");
+            // Очищаем форму
+            photoInput.value = "";
+            document.getElementById('team-member-fio').value = "";
+            document.getElementById('team-member-description').value = "";
+        })
+        .catch(error => {
+            console.error('Error adding team member:', error);
+        });
 });
 
 

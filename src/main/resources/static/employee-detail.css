@@ -5,7 +5,7 @@
 body {
     margin: 0;
     padding: 0;
-    padding-top: 103px; 
+    padding-top: 100px;
 }
 
 html{
@@ -48,9 +48,9 @@ nav ul li {
 
 nav .nav-link {
     text-decoration: none;
-    font-size: 24px;
+    font-size: 22px;
     color: white;
-    padding: 10px 20px;
+    padding: 8px 16px;
     border-radius: 30px;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -68,10 +68,10 @@ nav .nav-link:hover {
 }
 
 .contact-btn {
-    font-size: 24px;
+    font-size: 22px;
     color: white;
     background-color: transparent;
-    padding: 10px 20px;
+    padding: 8px 16px;
     border-radius: 30px;
     border: 2px solid white;
     cursor: pointer;
@@ -85,6 +85,142 @@ nav .nav-link:hover {
     background-color: #192941;
     color: white;
     border: 2px solid #192941;
+}
+/* Планшеты и небольшие ноутбуки */
+@media (max-width: 1300px) {
+    body{
+        padding-top: 60px;
+    }
+    .logo img {
+        height: 70px;
+    }
+
+    nav .nav-link {
+        font-size: 17px;
+        padding: 6px 12px;
+    }
+
+    .contact-btn {
+        font-size: 18px;
+        padding: 6px 12px;
+    }
+}
+
+/* Ещё меньше: планшеты и маленькие ноуты типа MacBook Air */
+@media (max-width: 1080px) and (min-width: 900px)  {
+    body{
+        padding-top: 50px;
+    }
+    .logo img {
+        height: 55px;
+    }
+
+    nav .nav-link {
+        font-size: 13px;
+        padding: 5px 8px;
+    }
+    nav ul li {
+        margin: 0 5px;
+    }
+
+    .contact-btn {
+        font-size: 14px;
+        padding: 5px 10px;
+    }
+}
+@media (max-width: 900px) and (min-width: 770px)  {
+    body{
+        padding-top: 40px;
+    }
+    .logo img {
+        height: 45px;
+    }
+    nav{
+        margin-left: -90px;
+    }
+    nav .nav-link {
+        font-size: 13px;
+        padding: 5px 8px;
+    }
+    nav ul li {
+        margin: 0 3px;
+    }
+
+    .contact-btn {
+        font-size: 12px;
+        padding: 5px 8px;
+    }
+}
+
+/* Мобильные устройства */
+@media (max-width: 768px) {
+    body {
+        padding-top: 80px; /* Для мобильных */
+    }
+    header {
+        padding: 10px 20px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .logo img {
+        height: 60px;
+    }
+
+    /* Скрываем меню на мобильных */
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: #B58F5E;
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    /* Отображаем меню при открытии */
+    nav ul.active {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    nav .nav-link {
+        font-size: 16px;
+        padding: 6px 10px;
+    }
+
+    .contact-btn {
+        font-size: 18px;
+        /*padding: 6px 10px;*/
+        margin-right: 50px;
+
+    }
+
+    /* Бургер-меню */
+    .burger-menu {
+        display: block;
+        cursor: pointer;
+    }
+
+    .burger-menu div {
+        width: 30px;
+        height: 3px;
+        background-color: white;
+        margin: 6px 0;
+        transition: all 0.3s ease;
+    }
+}
+
+/* Полностью скрываем бургер на больших экранах */
+@media (min-width: 769px) {
+    .burger-menu {
+        display: none;
+    }
 }
 
 .employee-detail-section {
@@ -118,13 +254,17 @@ nav .nav-link:hover {
 }
 .employee-detail-container {
     display: flex;
+    max-width: 1200px;
     width: 80%;
     color: white;
     min-height: 500px;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .employee-left {
-    width: 35%;
+    flex: 1 1 350px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -152,7 +292,7 @@ nav .nav-link:hover {
 }
 
 .employee-right {
-    width: 65%;
+    flex: 1 1 500px;
     padding-left: 60px;
     font-family: 'Cormorant Infant', serif;
     word-wrap: break-word;
@@ -167,6 +307,69 @@ nav .nav-link:hover {
 .employee-right p {
     font-size: 24px;
     margin-bottom: 10px;
+}
+/* Планшеты */
+@media (max-width: 992px) {
+    .employee-detail-container {
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+    }
+
+    .employee-left, .employee-right {
+        width: 100%;
+        padding: 0;
+    }
+
+    .employee-right {
+        margin-top: 30px;
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .employee-right h3 {
+        font-size: 28px;
+    }
+
+    .employee-right p {
+        font-size: 20px;
+    }
+
+    .back-arrow {
+        top: 140px;
+        left: 30px;
+        font-size: 26px;
+    }
+}
+
+/* Мобильные устройства */
+@media (max-width: 600px) {
+    .employee-detail-section {
+        padding: 30px 20px;
+    }
+
+    .employee-name {
+        font-size: 24px;
+    }
+
+    .photo-container img {
+        max-width: 200px;
+        padding: 8px;
+    }
+
+    .employee-right h3 {
+        font-size: 24px;
+    }
+
+    .employee-right p {
+        font-size: 18px;
+    }
+
+    .back-arrow {
+        top: 120px;
+        left: 20px;
+        font-size: 24px;
+    }
 }
 
 
@@ -218,7 +421,79 @@ nav .nav-link:hover {
     width: 250px; /* Размер логотипа */
     height: auto;
 }
+@media (max-width: 1200px) {
+    .footer-content {
+        flex-direction: row; /* Сохраняем горизонтальное расположение */
+        text-align: center; /* Центрируем элементы */
+    }
 
+    .footer-left, .footer-right {
+        /*flex: 1; /* Равномерное распределение */
+        margin-bottom: 10px; /* Отступ снизу */
+        margin-top: 10px;
+    }
+
+    .phone, .email, .address {
+        font-size: 16px; /* Еще больше уменьшаем размер шрифта */
+    }
+
+    .phone i, .email i, .address i {
+        font-size: 20px; /* Еще меньше иконки */
+    }
+
+    .footer img {
+        width: 150px; /* Уменьшаем размер логотипа */
+    }
+}
+@media (max-width: 876px) {
+    .footer-content {
+        flex-direction: row; /* Сохраняем горизонтальное расположение */
+        text-align: center; /* Центрируем элементы */
+    }
+
+    .footer-left, .footer-right {
+        /*flex: 1; /* Равномерное распределение */
+        margin-bottom: 10px; /* Отступ снизу */
+        margin-top: 10px;
+    }
+
+    .phone, .email, .address {
+        font-size: 12px; /* Еще больше уменьшаем размер шрифта */
+    }
+
+    .phone i, .email i, .address i {
+        font-size: 15px; /* Еще меньше иконки */
+    }
+
+    .footer img {
+        width: 100px; /* Уменьшаем размер логотипа */
+    }
+}
+
+@media (max-width: 576px) {
+    .footer-content {
+        flex-direction: row; /* Сохраняем горизонтальное расположение */
+        text-align: center; /* Центрируем элементы */
+    }
+
+    .footer-left, .footer-right {
+        /*flex: 1; /* Равномерное распределение */
+        margin-bottom: 10px; /* Отступ снизу */
+        margin-top: 10px;
+    }
+
+    .phone, .email, .address {
+        font-size: 9px; /* Еще больше уменьшаем размер шрифта */
+    }
+
+    .phone i, .email i, .address i {
+        font-size: 13px; /* Еще меньше иконки */
+    }
+
+    .footer img {
+        width: 90px; /* Уменьшаем размер логотипа */
+    }
+}
 /* Затемнение фона при открытии модалки */
 body.modal-open {
     overflow: hidden;
@@ -305,4 +580,59 @@ select{
 .modal.show {
     visibility: visible;
     opacity: 1;
+}
+/* Адаптация для планшетов и мобильных устройств */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 80%;
+        height: auto; /* Автоматическая высота для адаптации */
+        padding: 15px;
+    }
+
+    .modal-title {
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+
+    input, select {
+        font-size: 18px;
+        padding: 8px;
+    }
+
+    .submit-btn {
+        font-size: 20px;
+        width: 60%;
+        margin-bottom: 10px;
+    }
+
+    .close-btn {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 576px) {
+    .modal-content {
+        width: 90%;
+        padding: 10px;
+    }
+
+    .modal-title {
+        font-size: 20px;
+        margin-bottom: 25px;
+    }
+
+    input, select {
+        font-size: 16px;
+        padding: 6px;
+    }
+
+    .submit-btn {
+        font-size: 18px;
+        width: 70%;
+        margin-bottom: 10px;
+    }
+
+    .close-btn {
+        font-size: 26px;
+    }
 }
